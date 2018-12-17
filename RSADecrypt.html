@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Import materialize.css -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
+	      integrity="sha256-zvFVp826siCUuxc2KZRdlkALzLZWNb7FaJm9K1mRxW0=
+          sha384-h7QwJFwh+HNDUUY7cIv9QpZTGo8z8kjEBQtPsTpN/+CfVkyFhvbt/i1Irqo7ohv3
+          sha512-koDUjGvRZrcni2jJFT9I3VRYY0PWNKtr1Wj9U36eLhcFgBm36KV11yTi4p2H3HwUMirxZ+dMpKeUuRjYOFjeDQ=="
+	      crossorigin="anonymous" media="screen">
+	<!-- Import materialize.js -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"
+	        integrity="sha256-T6iGJTr91LvmSE0OD+GJ79ArVNS0JClRUKJuTPDr0ac=
+            sha384-tbuhQMGuhso9TT2cijayn2Q51DZammvtkYn9viaSL2kSXHKhGzuHndXPofZAAFQ+
+            sha512-zCHGovd9kHtyOdCLYmXApVFPtXQjZNyjHGU6DKPKR1HnhiSnVc71r1x7bpahdGw7mOKbz6oZ1k7/gbfRNp50ag=="
+	        crossorigin="anonymous"></script>
+
+	<script src="https://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+
+	<meta charset="UTF-8">
+	<title>FormHash</title>
+</head>
+<body>
+	<div class="row">
+		<div class="col s12 m8 offset-m2 l6 offset-l3">
+			<form novalidate autocomplete="off" id="form" class="col s12" action="./submit" method="post">
+				<div class="card blue-grey darken-1">
+					<div class="card-content white-text">
+						<span class="card-title">RSA Encrypt</span>
+						<div class="row">
+							<div class="card-action">
+								<div class="input-field col s12">
+									<textarea class="materialize-textarea" placeholder=" " id="ciphertext" cols="50" rows="100"></textarea>
+									<label class="blue-grey-text text-lighten-4" for="ciphertext">Cipher Text</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="materialize-textarea" placeholder=" " id="privkey" cols="50" rows="100"></textarea>
+									<label class="blue-grey-text text-lighten-4" for="privkey">Private Key</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="materialize-textarea" placeholder=" " id="message" cols="50" rows="100"></textarea>
+									<label class="blue-grey-text text-lighten-4" for="message">Message</label>
+								</div>
+								<button class="btn-flat btn-large blue-grey-text text-lighten-5 blue-grey darken-1" id="decrypt_button" type="submit" name="action">Decrypt<i class="material-icons left text">lock_open</i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="RSADecrypt.js"></script>
+	<script type="text/javascript" src="RSA.js"></script>
+</body>
+</html>
