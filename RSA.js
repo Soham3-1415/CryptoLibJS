@@ -12,6 +12,24 @@ class RSA {
 		this.n = JSON.parse(atob(keyPart1)).n;
 	}
 
+	get privKey() {
+		return btoa(JSON.stringify({d:this.d,n:this.n}));
+	}
+
+	set privKey(key) {
+		this.d = JSON.parse(atob(key)).d;
+		this.n = JSON.parse(atob(key)).n;
+	}
+
+	get pubKey() {
+		return btoa(JSON.stringify({e:this.e,n:this.n}));
+	}
+
+	set pubKey(key) {
+		this.e = JSON.parse(atob(key)).e;
+		this.n = JSON.parse(atob(key)).n;
+	}
+
 	encrypt(message){
 		const messageEncoded = bigInt(btoa(message).replace(/[=]/g, ""),64,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/",true);
 		const messageEncrypted = messageEncoded.modPow(this.e,this.n);
