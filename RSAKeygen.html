@@ -19,6 +19,8 @@
 
 	<script src="https://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
 
+	<link rel="stylesheet" href="RSAKeygen.css" media="screen">
+
 	<meta charset="UTF-8">
 	<title>FormHash</title>
 </head>
@@ -31,22 +33,30 @@
 						<span class="card-title">RSA Keygen</span>
 						<div class="row">
 							<div class="card-action">
-								<div class="input-field col s12">
-									<textarea class="materialize-textarea" placeholder=" " id="privkey" cols="50" rows="100"></textarea>
-									<label class="blue-grey-text text-lighten-4" for="privkey">Private Key</label>
-								</div>
-								<div class="input-field col s12">
-									<textarea class="materialize-textarea" placeholder=" " id="pubkey" cols="50" rows="100"></textarea>
-									<label class="blue-grey-text text-lighten-4" for="pubkey">Public Key</label>
-								</div>
 								<div class="input-field col s4">
 									<select id="bits">
+										<!-- Comment out 1024 bit option
+										<option value="1024">1024</option>
+										-->
 										<option value="2048">2048</option>
 										<option value="4096">4096</option>
 									</select>
 									<label class="blue-grey-text text-lighten-4">Keysize</label>
 								</div>
 								<button class="btn-flat btn-large blue-grey-text text-lighten-5 blue-grey darken-1" id="generate_button" type="submit" name="action">Generate<i class="material-icons left text">vpn_key</i></button>
+								<div class="row" id="output">
+									<div class="col s12">
+										<label class="blue-grey-text text-lighten-4" for="privkey">Private Key</label>
+										<br>
+										<output id="privkey"></output>
+									</div>
+									<div class="col s12">
+										<br>
+										<label class="blue-grey-text text-lighten-4" for="pubkey">Public Key</label>
+										<br>
+										<output id="pubkey"></output>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
